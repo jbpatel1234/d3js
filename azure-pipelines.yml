@@ -18,7 +18,15 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- task: PublishBuildArtifacts@1    
-  displayName: 'Publish Artifact: drop'
+# Copy files over SSH
+# Copy files or build artifacts to a remote machine over SSH
+- task: CopyFilesOverSSH@0
   inputs:
-    PathtoPublish: '$(build.artifactstagingdirectory)'
+    sshEndpoint: 
+    #sourceFolder: # Optional
+    #contents: '**' 
+    #targetFolder: # Optional
+    #cleanTargetFolder: false # Optional
+    #overwrite: true # Optional
+    #failOnEmptySource: false # Optional
+    #flattenFolders: false # Optional
