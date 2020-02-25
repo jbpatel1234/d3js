@@ -22,7 +22,7 @@ steps:
 # Copy files or build artifacts to a remote machine over SSH
 - task: CopyFilesOverSSH@0
   inputs:
-    sshEndpoint: 
+    sshEndpoint: 52.168.35.72
     #sourceFolder: # Optional
     #contents: '**' 
     #targetFolder: # Optional
