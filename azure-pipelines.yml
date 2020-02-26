@@ -18,14 +18,14 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- task: CopyFilesOverSSH@0
-  inputs:
-    sshEndpoint: 'Azure VM Demo'
-    contents: '**'
-    readyTimeout: '20000'
-
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+
+- task: CopyFilesOverSSH@0
+  inputs:
+    sshEndpoint: 'Azure VM Demo'
+    contents: '**'
+    readyTimeout: '20000'
